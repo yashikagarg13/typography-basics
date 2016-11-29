@@ -115,3 +115,48 @@ p {
 	line-height: @baseline-height * 1;
 	margin: 0;
 }
+
+
+
+/***************************************************************************************************************
+
+Problem 3 - Changing typography throughout the story
+Solution - Using base font and making all computations based on that.
+						Baseline line height also needs to be unit less value
+
+***************************************************************************************************************/
+
+@base-font-size: 16px;
+@base-line-height: 1.5;
+@font-size-variation: 0.6;
+
+@computed-height: ceil(@base-font-size * @base-line-height);
+
+body {
+	padding: 0 @computed-height;
+	font-size: @base-font-size;
+}
+
+h2 {
+	font-size: @base-font-size * @font-size-variation * 4;
+	line-height: @computed-height * 2;
+	margin: @computed-height * 2 0;
+}
+
+h4 {
+	font-size: @base-font-size * @font-size-variation * 2;
+	line-height: @computed-height * 1;
+	margin: @computed-height * 1 0;
+}
+
+h6 {
+	font-size: @base-font-size;
+	line-height: @baseline-height * 1;
+	margin: @computed-height * 1 0 0 0;
+}
+
+p {
+	font-size: @base-font-size;
+	line-height: @computed-height;
+	margin: 0;
+}
