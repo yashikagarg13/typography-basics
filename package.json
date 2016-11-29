@@ -1,0 +1,22 @@
+{
+  "name": "typography-basics",
+  "version": "1.0.0",
+  "description": "Some fundamentals of typography and major challenges that needs attention!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yashikagarg13/typography-basics.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yashikagarg13/typography-basics/issues"
+  },
+  "homepage": "https://github.com/yashikagarg13/typography-basics#readme",
+  "dependencies": {
+    "less": "^2.7.1"
+  }
+}

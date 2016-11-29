@@ -16,10 +16,12 @@ h6 {
 
 p {
 	font-size: 16px;
+	text-align: justify;
 }
 
 
-/***************************************************************************
+/***************************************************************************************************************
+
 Problem 1 - Different devices uses different sizes
 Breakpoints
 xs - 480 px - Small screen phones
@@ -27,8 +29,7 @@ sm - 768 px - Tablets and phones
 md - 992 px - Desktop
 lg - 1200 px - Wide Desktop
 
-***************************************************************************/
-
+***************************************************************************************************************/
 
 @media (max-width: 480px) {
 	h2 {font-size: 28px;}
@@ -63,4 +64,54 @@ lg - 1200 px - Wide Desktop
 	h4 {font-size: 24px;}
 	h6 {font-size: 18px;}
 	p {font-size: 16px;}
+}
+
+
+/***************************************************************************************************************
+
+Problem 2 - Attaining vertical rythm
+Soultion - Find a baseline height and keep are spaces as multiple of this baseline height.
+
+Baseline height - is the number which gets repeated most on the page.
+Repeatition - We need to repeat this number to bring consistency
+Varying Repeatition - We definitely don't want each of our vertical space to be same. We want to be variable in
+											order to show relationship between different elements on page.
+											In order to to achieve these we will multiples of base line height.
+											24px multiplied by 2
+											24px divide by 2, etc...
+
+***************************************************************************************************************/
+
+/*body.lines {
+  background: linear-gradient(
+    to bottom,
+    white, white 95%, #aaa 100%, #aaa
+  );
+  background-size: 100% 24px;
+}*/
+
+@baseline-height: 24px;
+
+body {
+	padding: 0 @baseline-height;
+}
+
+h2 {
+	line-height: @baseline-height * 2;
+	margin: @baseline-height * 2 0;
+}
+
+h4 {
+	line-height: @baseline-height * 1;
+	margin: @baseline-height * 1 0;
+}
+
+h6 {
+	line-height: @baseline-height * 1;
+	margin: @baseline-height * 1 0 0 0;
+}
+
+p {
+	line-height: @baseline-height * 1;
+	margin: 0;
 }
