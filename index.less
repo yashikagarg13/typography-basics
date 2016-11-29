@@ -1,0 +1,66 @@
+h2 {
+	font-size: 42px;
+	margin: 0;
+	text-align: center;
+}
+
+h4 {
+	font-size: 24px;
+	margin: 0;
+}
+
+h6 {
+	font-size: 18px;
+	margin: 0;
+}
+
+p {
+	font-size: 16px;
+}
+
+
+/***************************************************************************
+Problem 1 - Different devices uses different sizes
+Breakpoints
+xs - 480 px - Small screen phones
+sm - 768 px - Tablets and phones
+md - 992 px - Desktop
+lg - 1200 px - Wide Desktop
+
+***************************************************************************/
+
+
+@media (max-width: 480px) {
+	h2 {font-size: 28px;}
+	h4 {font-size: 20px;}
+	h6 {font-size: 18px;}
+	p {font-size: 14px;}
+}
+
+@media (min-width: 480px) and (max-width: 768px) {
+	h2 {font-size: 36px;}
+	h4 {font-size: 24px;}
+	h6 {font-size: 20px;}
+	p {font-size: 16px;}
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+	h2 {font-size: 36px;}
+	h4 {font-size: 28px;}
+	h6 {font-size: 24px;}
+	p {font-size: 16px;}
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+	h2 {font-size: 32px;}
+	h4 {font-size: 24px;}
+	h6 {font-size: 20px;}
+	p {font-size: 16px;}
+}
+
+@media (min-width: 1200px) {
+	h2 {font-size: 42px;}
+	h4 {font-size: 24px;}
+	h6 {font-size: 18px;}
+	p {font-size: 16px;}
+}
