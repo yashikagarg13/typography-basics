@@ -16,7 +16,6 @@ h6 {
 
 p {
 	font-size: 16px;
-	text-align: justify;
 }
 
 
@@ -90,6 +89,7 @@ Varying Repeatition - We definitely don't want each of our vertical space to be 
   background-size: 100% 24px;
 }*/
 
+
 @baseline-height: 24px;
 
 body {
@@ -98,22 +98,22 @@ body {
 
 h2 {
 	line-height: @baseline-height * 2;
-	margin: @baseline-height * 2 0;
+	margin: 0 0 @baseline-height * 2 0;
 }
 
 h4 {
 	line-height: @baseline-height * 1;
-	margin: @baseline-height * 1 0;
+	margin: 0 0 @baseline-height * 1 0;
 }
 
 h6 {
 	line-height: @baseline-height * 1;
-	margin: @baseline-height * 1 0 0 0;
+	margin: 0;
 }
 
 p {
 	line-height: @baseline-height * 1;
-	margin: 0;
+	margin:  0 0 @baseline-height * 1 0;
 }
 
 
@@ -126,7 +126,7 @@ Solution - Using base font and making all computations based on that.
 
 ***************************************************************************************************************/
 
-@base-font-size: 16px;
+@base-font-size: 18px;
 @base-line-height: 1.5;
 @font-size-variation: 0.6;
 
@@ -135,28 +135,91 @@ Solution - Using base font and making all computations based on that.
 body {
 	padding: 0 @computed-height;
 	font-size: @base-font-size;
+	line-height: @computed-height;
 }
 
 h2 {
 	font-size: @base-font-size * @font-size-variation * 4;
 	line-height: @computed-height * 2;
-	margin: @computed-height * 2 0;
+	margin: 0 0 @computed-height * 2 0;
 }
 
 h4 {
 	font-size: @base-font-size * @font-size-variation * 2;
 	line-height: @computed-height * 1;
-	margin: @computed-height * 1 0;
+	margin: 0 0 @computed-height * 1 0;
 }
 
 h6 {
 	font-size: @base-font-size;
-	line-height: @baseline-height * 1;
-	margin: @computed-height * 1 0 0 0;
+	line-height: @computed-height * 1;
+	margin: 0;
 }
 
 p {
 	font-size: @base-font-size;
 	line-height: @computed-height;
+	margin:  0 0 @computed-height * 1 0;
+}
+
+
+
+/***************************************************************************************************************
+
+Problem 4 - Responsive Design
+Solution - Using scalable units em/rem
+
+***************************************************************************************************************/
+
+
+@base-font-size: 20px;
+@line-height: 1.5rem;
+
+html {
+	font-size: @base-font-size
+}
+
+body {
+	background: #e0e0e0;
+	font-size: @base-font-size;
+	line-height: @line-height;
+	padding: 0 @line-height;
 	margin: 0;
 }
+
+.container {
+	background: #ffffff;
+	max-width: 32rem; // 75 chars per line.
+	margin: 0 auto;
+	padding: @line-height * 2;
+}
+
+h2 {
+	font-size: 2.25rem;
+	line-height: @line-height * 2;
+	margin: 0 0 @line-height * 2 0;
+}
+
+h4 {
+	font-size: 1.75rem;
+	line-height: @line-height * 1;
+	margin: 0 0 @line-height * 1 0;
+}
+
+h6 {
+	font-size: 1.25rem;
+	line-height: @line-height * 1;
+	margin: 0;
+}
+
+p {
+	font-size: 1rem;
+	line-height: @line-height;
+	margin:  0 0 @line-height * 1 0;
+}
+
+
+/*
+		h1,  h2,  h3, h4,   h5,  h6
+		2.5, 2.25, 2, 1.75, 1.5, 1.25
+*/
