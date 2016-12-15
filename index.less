@@ -171,17 +171,30 @@ Solution - Using scalable units em/rem
 
 ***************************************************************************************************************/
 
-
-@base-font-size: 20px;
-@line-height: 1.5rem;
-
 html {
-	font-size: @base-font-size
+	font-size: 16px;
 }
+@media (max-width: 480px) {
+	html {
+		font-size: 16px;
+	}
+}
+@media (min-width: 480px) and (max-width: 1200px) {
+	html {
+		font-size: 18px;
+	}
+}
+
+@media (min-width: 1200px)  {
+	html {
+		font-size: 20px;
+	}
+}
+
+@line-height: 1.5rem;
 
 body {
 	background: #e0e0e0;
-	font-size: @base-font-size;
 	line-height: @line-height;
 	padding: 0 @line-height;
 	margin: 0;
@@ -192,6 +205,9 @@ body {
 	max-width: 32rem; // 75 chars per line.
 	margin: 0 auto;
 	padding: @line-height * 2;
+	@media (max-width: 480px) {
+		padding: @line-height * 0.8;
+	}
 }
 
 h2 {
