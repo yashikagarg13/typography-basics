@@ -1,4 +1,13 @@
-Application describing different challenges of attaining good typography and their solution
+####Install and Build
+
+```
+npm install 			// To install dependencies
+lessc index.less index.css	// To convert less file into css file
+```
+
+####Purpose
+
+Solving different challenges faced in attempt of attaining good typography.
 
 * **Different font sizes for different screen sizes**
 
